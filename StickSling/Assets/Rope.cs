@@ -16,7 +16,7 @@ public class Rope : MonoBehaviour
     void Start()
     {
         grapplingHook = GetComponent<GrapplingHook>();
-        lineRenderer = Hook.GetComponent<LineRenderer>();
+        lineRenderer = GetComponent<LineRenderer>();
     }
 
 
@@ -34,6 +34,11 @@ public class Rope : MonoBehaviour
             positions[1] = Hook.position;
             lineRenderer.SetPositions(positions);
         }
+    }
+
+    public void ResetRope()
+    {
+        lineRenderer.enabled = false;
     }
 
 }
